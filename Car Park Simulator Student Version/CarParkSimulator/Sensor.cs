@@ -7,20 +7,21 @@ namespace CarParkSimulator
 {
     class Sensor
     {
-        private bool isCarOnSensor(bool hasCarArrived)
+        public bool isCarOnSensor()
         {
-            bool carOnSensor = hasCarArrived;
             return carOnSensor;
         }
 
-        private abstract void carDetected()
+        public abstract void carDetected()
         {
 
         }
 
-        private abstract void carLeftSensor()
+        public abstract void carLeftSensor()
         {
 
         }
+
+        protected bool carOnSensor;
     }
 }

@@ -7,16 +7,16 @@ namespace CarParkSimulator
 {
     class EntrySensor : Sensor
     {
-        private bool carDetected(bool isCarAtEntrance)
+        public  bool carDetected()
         {
-            
-            return isCarAtEntrance;
+            carOnSensor = true;
+            return carOnSensor;
         }
 
-        private bool carLeftSensor(bool isCarStillAtEntry)
+        public bool carLeftSensor()
         {
-            bool isCarAtSensor = isCarStillAtEntry;
-            return isCarAtSensor;
+            carOnSensor = false;
+            return carOnSensor;
         }
     }
 }

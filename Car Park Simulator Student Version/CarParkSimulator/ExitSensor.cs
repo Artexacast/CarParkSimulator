@@ -7,14 +7,16 @@ namespace CarParkSimulator
 {
     class ExitSensor : Sensor
     {
-        private bool carDetected(bool isCarAtExit)
+        private bool carDetected()
         {
-
+            carOnSensor = true;
+            return carOnSensor;
         }
 
-        private bool carLeftSensor(bool isCarStillAtExit)
+        private bool carLeftSensor()
         {
-
+            carOnSensor = false;
+            return carOnSensor;
         }
     }
 }
