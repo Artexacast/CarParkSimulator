@@ -7,29 +7,24 @@ namespace CarParkSimulator
 {
     class FullSign
     {
-        public void FullSign()
+        public FullSign()
         {
-            Lit = false;
+            lit = false;
         }
+
 
         public bool isLit()
         {
-            bool isSignLit = Lit;
+            bool isSignLit = lit;
             return isSignLit;
         }
 
         public void setLit(bool stateToSetTo)
         {
-            Lit = stateToSetTo;
+            lit = stateToSetTo;
         }
 
         private bool lit;
-
-        public bool Lit
-        {
-            get { return lit; }
-            set { lit = value; }
-        }
 
     }
 }

@@ -7,6 +7,11 @@ namespace CarParkSimulator
 {
     class Barrier
     {
+        public Barrier()
+        {
+            lifted = false;
+        }
+
         public void Lower()
         {
             lifted = false;

@@ -5,22 +5,17 @@ using System.Text;
 
 namespace CarParkSimulator
 {
-    class Sensor
+    abstract class Sensor
     {
         public bool isCarOnSensor()
         {
             return carOnSensor;
         }
 
-        public abstract void carDetected()
-        {
+        public abstract bool carDetected();
 
-        }
-
-        public abstract void carLeftSensor()
-        {
-
-        }
+        public abstract bool carLeftSensor();
+        
 
         protected bool carOnSensor;
     }

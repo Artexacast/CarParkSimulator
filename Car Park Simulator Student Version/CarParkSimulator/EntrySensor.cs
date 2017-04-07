@@ -7,13 +7,22 @@ namespace CarParkSimulator
 {
     class EntrySensor : Sensor
     {
-        public  bool carDetected()
+        private CarPark carPark;
+
+        public EntrySensor(CarPark carPark)
+        {
+            carOnSensor = false;
+            this.carPark = carPark;
+        }
+
+        public override bool carDetected()
         {
             carOnSensor = true;
+            carPark.carArrivedAtEntrance();
             return carOnSensor;
         }
 
-        public bool carLeftSensor()
+        public override bool carLeftSensor()
         {
             carOnSensor = false;
             return carOnSensor;
