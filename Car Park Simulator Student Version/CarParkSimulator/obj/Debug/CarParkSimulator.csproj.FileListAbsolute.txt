@@ -3,3 +3,8 @@ C:\Users\maxos_000\Documents\UniWork\Year 1\System Modelling\Car Park Simulator 
 C:\Users\maxos_000\Documents\UniWork\Year 1\System Modelling\Car Park Simulator Student Version\CarParkSimulator\obj\Debug\CarParkSimulator.Properties.Resources.resources
 C:\Users\maxos_000\Documents\UniWork\Year 1\System Modelling\Car Park Simulator Student Version\CarParkSimulator\obj\Debug\CarParkSimulator.SimulatorInterface.resources
 C:\Users\maxos_000\Documents\UniWork\Year 1\System Modelling\Car Park Simulator Student Version\CarParkSimulator\obj\Debug\CarParkSimulator.csproj.GenerateResource.Cache
+F:\CarParkSimulator-master\Car Park Simulator Student Version\CarParkSimulator\bin\Debug\CarParkSimulator.exe.config
+F:\CarParkSimulator-master\Car Park Simulator Student Version\CarParkSimulator\obj\Debug\CarParkSimulator.csprojResolveAssemblyReference.cache
+F:\CarParkSimulator-master\Car Park Simulator Student Version\CarParkSimulator\obj\Debug\CarParkSimulator.Properties.Resources.resources
+F:\CarParkSimulator-master\Car Park Simulator Student Version\CarParkSimulator\obj\Debug\CarParkSimulator.SimulatorInterface.resources
+F:\CarParkSimulator-master\Car Park Simulator Student Version\CarParkSimulator\obj\Debug\CarParkSimulator.csproj.GenerateResource.Cache

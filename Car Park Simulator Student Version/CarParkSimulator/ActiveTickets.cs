@@ -8,7 +8,6 @@ namespace CarParkSimulator
     class ActiveTickets
     {
         protected List<Ticket> ticketList = new List<Ticket>();
-        
 
         public List<Ticket> GetTickets()
         {

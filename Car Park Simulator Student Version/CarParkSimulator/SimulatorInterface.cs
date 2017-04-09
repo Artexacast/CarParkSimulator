@@ -99,6 +99,13 @@ namespace CarParkSimulator
 
         private void UpdateDisplay()
         {
+            lblEntryBarrier.Text = "hello";
         }
+
+        private void lblTicketValidator_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

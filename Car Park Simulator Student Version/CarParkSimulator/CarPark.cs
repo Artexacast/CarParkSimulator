@@ -10,62 +10,61 @@ namespace CarParkSimulator
         private int currentSpaces = 0;
         private int maxSpaces = 5;
 
-        private void carArrivedAtEntrance()
+        private TicketMachine ticketMachine;
+        private TicketValidator ticketValidator;
+        private FullSign fullSign;
+        private Barrier entryBarrier;
+        private Barrier exitBarrier;
+
+
+
+        public CarPark(TicketMachine ticketMachine, TicketValidator ticketValidator, FullSign fullSign, Barrier entryBarrier, Barrier exitBarrier)
         {
-            EntrySensor sensor = new EntrySensor();
-            sensor.carDetected();
+            this.ticketMachine = ticketMachine;
+            this.ticketValidator = ticketValidator;
+            this.fullSign = fullSign;
+            this.entryBarrier = entryBarrier;
+            this.exitBarrier = exitBarrier;
         }
 
-        private void TicketDispensed()
+        public void carArrivedAtEntrance()
         {
-
+            ticketMachine.carArrived();
         }
 
-        private void carEnteredCarPark()
+        public void TicketDispensed()
         {
-            EntrySensor sensor = new EntrySensor();
-            Barrier barrier = new Barrier();
-
-            barrier.Lower();
-            
-
-            sensor.carLeftSensor();
+            entryBarrier.Raise();
         }
 
-        private void carArrivedAtExit()
+        public void carEnteredCarPark()
         {
-            
-            /////////////////////////////////////////////
-            //Needs work/////////////////////////////////
-            /////////////////////////////////////////////
+            entryBarrier.Lower();
+            if(currentSpaces >= maxSpaces)
+            {
+                fullSign.setLit(true); //turns on sign
+            }
+        }
 
-          
+        public void carArrivedAtExit()
+        {
+            ticketValidator.carArrived();
         }
 
         public void ticketValidated()
         {
-            Ticket ticket = new Ticket();
-            ActiveTickets activeTicket = new ActiveTickets();
-            if (ticket.isPaid() == true)
-            {
-                activeTicket.RemoveTicket();
-            }
+            ticketValidator.ticketEntered();
+            exitBarrier.Raise(); 
+
         }
 
         public void carExitedCarPark()
         {
-            ExitSensor sensor = new ExitSensor();
-            Barrier barrier = new Barrier();
-
-            barrier.Lower();
-
-            sensor.carLeftSensor();
+            exitBarrier.Lower();
         }
 
         public bool isFull()
         {
-            FullSign sign = new FullSign();
-
             bool fullOrNot = false;
             if (currentSpaces < maxSpaces)
             {
@@ -74,10 +73,39 @@ namespace CarParkSimulator
             else
             {
                 bool stateToBeSetTo = true;
-                sign.setLit(stateToBeSetTo);
+                fullSign.setLit(stateToBeSetTo);
                 return fullOrNot = true;
             }
         }
+
+        public bool isEmpty()
+        {
+            bool emptyOrNot = false;
+
+            if (currentSpaces == 0)
+            {
+                emptyOrNot = true;
+            }
+
+            return emptyOrNot;
+        }
+
+        public bool hasSpace()
+        {
+            bool spaceOrNot = false;
+
+            if (currentSpaces < maxSpaces)
+            {
+                spaceOrNot = true;
+            }
+
+            return spaceOrNot;
+        }
+
+       public int getCurrentSpaces()
+       {
+           return currentSpaces;
+       }
 
         
 
