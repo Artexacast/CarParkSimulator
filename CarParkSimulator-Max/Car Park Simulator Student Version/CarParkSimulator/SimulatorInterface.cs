@@ -114,7 +114,7 @@ namespace CarParkSimulator
                 btnCarArrivesAtExit.Show();
             }
 
-
+            lblPayReminder.Hide();
 
         }
 
@@ -192,6 +192,15 @@ namespace CarParkSimulator
             {
                 lstActiveTickets.Items.Clear();
             }
+
+            if (activeTickets.GetTickets().Count != 0)
+            {
+                int lastTicket = activeTickets.GetTickets().Count - 1;
+                if (activeTickets.GetTickets()[lastTicket].isPaid() == false)
+                {
+                    lblPayReminder.Show();
+                }
+            }
         }
 
 
@@ -203,6 +212,11 @@ namespace CarParkSimulator
         }
 
         private void lstActiveTickets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

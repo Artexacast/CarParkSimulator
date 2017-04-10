@@ -36,6 +36,10 @@ namespace CarParkSimulator
                 carPark.ticketValidated();
                 message = "Thankyou, drive safely.";
             }
+            else
+            {
+
+            }
         }
 
         public bool validateTicket()
@@ -53,6 +57,7 @@ namespace CarParkSimulator
                 {
                     message = "Please pay for your ticket and try again.";
                     return valid = false;
+                    
                 }
             }
             return valid;
