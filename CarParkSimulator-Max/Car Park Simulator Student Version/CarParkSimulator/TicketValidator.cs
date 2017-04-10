@@ -30,10 +30,32 @@ namespace CarParkSimulator
 
         public void ticketEntered()
         {
-            activeTickets.RemoveTicket();
-            carPark.ticketValidated();
-            message = "Thankyou, drive safely.";
+            if (validateTicket() == true)
+            {
+                activeTickets.RemoveTicket();
+                carPark.ticketValidated();
+                message = "Thankyou, drive safely.";
+            }
+        }
 
+        public bool validateTicket()
+        {
+            bool valid = false;
+            if (activeTickets.GetTickets().Count != 0)
+            {
+                int lastTicket = activeTickets.GetTickets().Count() - 1;
+                if (activeTickets.GetTickets()[lastTicket].isPaid() == true)
+                {
+                    return valid = true;
+
+                }
+                else
+                {
+                    message = "Please pay for your ticket and try again.";
+                    return valid = false;
+                }
+            }
+            return valid;
         }
 
         public void clearMessage()

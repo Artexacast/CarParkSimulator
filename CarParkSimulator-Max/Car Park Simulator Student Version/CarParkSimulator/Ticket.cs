@@ -17,11 +17,10 @@ namespace CarParkSimulator
 
         public bool isPaid()
         {
-            bool isPaid = false;
-            return isPaid;
+            return paid;
         }
 
-        private bool setPaid(bool paidOrNot)
+        public bool setPaid(bool paidOrNot)
         {
             paid = paidOrNot;
             return paid;

@@ -57,6 +57,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblSpaces = new System.Windows.Forms.Label();
             this.lblFullSign = new System.Windows.Forms.Label();
+            this.btnPayForTicket = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -370,11 +371,23 @@
             this.lblFullSign.TabIndex = 0;
             this.lblFullSign.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnPayForTicket
+            // 
+            this.btnPayForTicket.Location = new System.Drawing.Point(451, 83);
+            this.btnPayForTicket.Name = "btnPayForTicket";
+            this.btnPayForTicket.Size = new System.Drawing.Size(130, 54);
+            this.btnPayForTicket.TabIndex = 5;
+            this.btnPayForTicket.Text = "Pay For Ticket";
+            this.btnPayForTicket.UseVisualStyleBackColor = true;
+            this.btnPayForTicket.Visible = false;
+            this.btnPayForTicket.Click += new System.EventHandler(this.btnPayForTicket_Click);
+            // 
             // SimulatorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 399);
+            this.Controls.Add(this.btnPayForTicket);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.label3);
@@ -429,6 +442,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ListBox lstActiveTickets;
+        private System.Windows.Forms.Button btnPayForTicket;
     }
 }
 

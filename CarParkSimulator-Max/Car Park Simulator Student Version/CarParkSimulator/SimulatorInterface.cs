@@ -81,17 +81,41 @@ namespace CarParkSimulator
             entrySensor.carLeftSensor();
             UpdateDisplay();
 
-            if(carPark.getCurrentSpaces() != 0)
+            if (carPark.getCurrentSpaces() != 0)
             {
-            btnCarArrivesAtExit.Show();
+                btnCarArrivesAtExit.Show();
+                btnPayForTicket.Show();
             }
 
             btnCarEntersCarPark.Hide();
-            
+
             if (carPark.getCurrentSpaces() != 5)
             {
                 btnCarArrivesAtEntrance.Show();
             }
+        }
+
+        private void btnPayForTicket_Click(object sender, EventArgs e)
+        {
+            if (activeTickets.GetTickets().Count != 0)
+            {
+                int lastTicket = activeTickets.GetTickets().Count - 1;
+                activeTickets.GetTickets()[lastTicket].setPaid(true);
+            }
+           //sets paid on ticket to true
+
+            if (carPark.getCurrentSpaces() == 0)
+            {
+                btnPayForTicket.Hide();
+            }
+
+            if (btnCarArrivesAtExit.Visible == false)
+            {
+                btnCarArrivesAtExit.Show();
+            }
+
+
+
         }
 
         private void CarArrivesAtExit(object sender, EventArgs e)
@@ -99,15 +123,29 @@ namespace CarParkSimulator
             exitSensor.carDetected();
             UpdateDisplay();
             btnDriverEntersTicket.Show();
-            
+
             btnCarArrivesAtExit.Hide();
         }
 
         private void DriverEntersTicket(object sender, EventArgs e)
         {
-            ticketValidator.ticketEntered();
+
             UpdateDisplay();
-            btnCarExitsCarPark.Show();
+
+            int lastTicket = 0;
+
+            if (activeTickets.GetTickets().Count != 0)
+            {
+                lastTicket = activeTickets.GetTickets().Count - 1;
+
+                if (activeTickets.GetTickets()[lastTicket].isPaid() == true)
+                {
+                    btnCarExitsCarPark.Show();
+                }
+            }
+            
+            
+            ticketValidator.ticketEntered();
 
             btnDriverEntersTicket.Hide();
         }
@@ -122,7 +160,7 @@ namespace CarParkSimulator
             {
                 btnCarArrivesAtExit.Show();
             }
-            
+
             if (carPark.getCurrentSpaces() != 5)
             {
                 btnCarArrivesAtEntrance.Show();
@@ -156,6 +194,9 @@ namespace CarParkSimulator
             }
         }
 
+
+
+
         private void lblTicketValidator_Click(object sender, EventArgs e)
         {
 
@@ -165,6 +206,8 @@ namespace CarParkSimulator
         {
 
         }
+
+
 
     }
 }
