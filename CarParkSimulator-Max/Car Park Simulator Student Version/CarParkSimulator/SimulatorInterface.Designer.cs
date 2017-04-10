@@ -58,6 +58,7 @@
             this.lblSpaces = new System.Windows.Forms.Label();
             this.lblFullSign = new System.Windows.Forms.Label();
             this.btnPayForTicket = new System.Windows.Forms.Button();
+            this.lblPayReminder = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -373,7 +374,7 @@
             // 
             // btnPayForTicket
             // 
-            this.btnPayForTicket.Location = new System.Drawing.Point(451, 83);
+            this.btnPayForTicket.Location = new System.Drawing.Point(451, 64);
             this.btnPayForTicket.Name = "btnPayForTicket";
             this.btnPayForTicket.Size = new System.Drawing.Size(130, 54);
             this.btnPayForTicket.TabIndex = 5;
@@ -382,11 +383,23 @@
             this.btnPayForTicket.Visible = false;
             this.btnPayForTicket.Click += new System.EventHandler(this.btnPayForTicket_Click);
             // 
+            // lblPayReminder
+            // 
+            this.lblPayReminder.AutoSize = true;
+            this.lblPayReminder.Location = new System.Drawing.Point(448, 124);
+            this.lblPayReminder.Name = "lblPayReminder";
+            this.lblPayReminder.Size = new System.Drawing.Size(258, 13);
+            this.lblPayReminder.TabIndex = 6;
+            this.lblPayReminder.Text = "You need to pay for your ticket before you can leave.";
+            this.lblPayReminder.Visible = false;
+            this.lblPayReminder.Click += new System.EventHandler(this.label1_Click);
+            // 
             // SimulatorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 399);
+            this.Controls.Add(this.lblPayReminder);
             this.Controls.Add(this.btnPayForTicket);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnReset);
@@ -443,6 +456,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.ListBox lstActiveTickets;
         private System.Windows.Forms.Button btnPayForTicket;
+        private System.Windows.Forms.Label lblPayReminder;
     }
 }
 

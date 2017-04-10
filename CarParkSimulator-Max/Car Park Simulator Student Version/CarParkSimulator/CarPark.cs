@@ -55,9 +55,6 @@ namespace CarParkSimulator
         public void carArrivedAtExit()
         {
             ticketValidator.carArrived();
-        
-
-
         }
 
         public void ticketValidated()
